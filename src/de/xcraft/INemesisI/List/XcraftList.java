@@ -1,4 +1,4 @@
-package de.xcraft.inemesisi.playerlist;
+package de.xcraft.INemesisI.List;
 
 import java.io.File;
 import java.util.HashMap;
@@ -18,7 +18,7 @@ import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class PlayerList extends JavaPlugin {
+public class XcraftList extends JavaPlugin {
 
 	private EventListener eventlistener = new EventListener(this);
 
@@ -67,7 +67,8 @@ public class PlayerList extends JavaPlugin {
 	private boolean setupPermission() {
 		RegisteredServiceProvider<Permission> permissionProvider = getServer().getServicesManager().getRegistration(
 				net.milkbowl.vault.permission.Permission.class);
-		if (permissionProvider != null) permission = permissionProvider.getProvider();
+		if (permissionProvider != null)
+			permission = permissionProvider.getProvider();
 
 		return permission != null;
 	}
@@ -102,7 +103,7 @@ public class PlayerList extends JavaPlugin {
 		values.put("name", player.getName());
 
 		for (String permnode : permsection.getKeys(false)) {
-			if (player.hasPermission(getName() + "." + permnode)) {
+			if (player.hasPermission(permnode)) {
 				for (String val : permsection.getConfigurationSection(permnode).getKeys(false)) {
 					values.put(val, permsection.getString(permnode + "." + val));
 				}
@@ -110,9 +111,11 @@ public class PlayerList extends JavaPlugin {
 				for (String replaceMe : toReplace) {
 					if (values.containsKey(replaceMe)) {
 						listformat = listformat.replace("$" + replaceMe + "$", values.get(replaceMe));
-					} else listformat = listformat.replace("$" + replaceMe + "$", "");
+					} else
+						listformat = listformat.replace("$" + replaceMe + "$", "");
 				}
-				if (listformat.length() > 16) listformat = listformat.substring(0, 13) + "...";
+				if (listformat.length() > 16)
+					listformat = listformat.substring(0, 13) + "...";
 				return listformat.replaceAll("&([a-f0-9])", "\u00A7$1");
 			}
 		}

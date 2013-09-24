@@ -1,5 +1,5 @@
-name: XcraftPlayerList
-main: de.xcraft.inemesisi.playerlist.PlayerList
+name: XcraftList
+main: de.xcraft.INemesisI.List.XcraftList
 version: 1.0
 author: INemesisI
 

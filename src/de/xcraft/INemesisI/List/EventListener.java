@@ -1,4 +1,4 @@
-package de.xcraft.inemesisi.playerlist;
+package de.xcraft.INemesisI.List;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -6,9 +6,9 @@ import org.bukkit.event.player.PlayerJoinEvent;
 
 public class EventListener implements Listener {
 
-	private PlayerList plugin = null;
+	private XcraftList plugin = null;
 
-	public EventListener(PlayerList instance) {
+	public EventListener(XcraftList instance) {
 		plugin = instance;
 	}
 
