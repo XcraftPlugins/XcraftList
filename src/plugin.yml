@@ -1,0 +1,15 @@
+name: XcraftPlayerList
+main: de.xcraft.inemesisi.playerlist.PlayerList
+version: 1.0
+author: INemesisI
+
+commands:
+  playerlist:
+    usage: /playerlist
+  pl:
+    usage: /pl
+    
+permissions:
+    XcraftPlayerList.reload:
+        description: Access reload command
+        default: op

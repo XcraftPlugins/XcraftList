@@ -1,0 +1,9 @@
+users:
+    Comino:
+        color: '&8'
+        name: 'INemesisI'
+permissions:
+    list.Admin:
+        color: '&8'
+config:
+    listformat: '$color$$name$'
